@@ -11,14 +11,14 @@ switch ($aksi) {
             <table class="table">
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th>Nama</th>
-                        <th>Email</th>
-                        <th>NIM</th>
-                        <th>Gender</th>
-                        <th>Hobi</th>
-                        <th>Alamat</th>
-                        <th>Prodi</th>
+                        <th class ="text-center">No</th>
+                        <th class ="text-start">Nama</th>
+                        <th class ="text-start">Email</th>
+                        <th class ="text-start">NIM</th>
+                        <th class ="text-start">Gender</th>
+                        <th class ="text-start">Hobi</th>
+                        <th class ="text-start">Alamat</th>
+                        <th class ="text-start">Prodi</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -32,7 +32,7 @@ switch ($aksi) {
                             <td></td>
                             <td><?= $values['nama'] ?></td>
                             <td><?= $values['email'] ?></td>
-                            <td><?= $values['nim'] ?></td>
+                            <td class ="text-start"><?= $values['nim'] ?></td>
                             <td><?= $values['gender'] ?></td>
                             <td><?= $values['hobi'] ?></td>
                             <td><?= $values['alamat'] ?></td>

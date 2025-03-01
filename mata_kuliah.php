@@ -14,12 +14,12 @@ switch ($aksi) {
             <table class="table">
                 <thead>
                     <tr>
-                        <th>No</th>
+                        <th class ="text-center">No</th>
                         <th>Kode Mata Kuliah</th>
                         <th>Nama Mata Kuliah</th>
-                        <th>SKS</th>
+                        <th class ="text-start">SKS</th>
                         <th>Dosen</th>
-                        <th>Semester</th>
+                        <th class ="text-start">Semester</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -30,12 +30,12 @@ switch ($aksi) {
                     while ($values = mysqli_fetch_assoc($selectQuery)) {
                     ?>
                         <tr>
-                            <td><?= $no++ ?></td>
+                            <td class ="text-center"><?= $no++ ?></td>
                             <td><?= $values['kode_mk'] ?></td>
                             <td><?= $values['nama_mk'] ?></td>
-                            <td><?= $values['sks'] ?></td>
+                            <td class ="text-start"><?= $values['sks'] ?></td>
                             <td><?= $values['nama_dosen'] ?></td>
-                            <td><?= $values['semester'] ?></td>
+                            <td class ="text-start"><?= $values['semester'] ?></td>
                             <td>
                                 <a class="btn btn-warning" href="index.php?page=mata-kuliah&aksi=form&proses=update&id=<?= $values['kode_mk']; ?>">Edit</a>
                                 <?php if (getLevel() == 'admin'): ?>
