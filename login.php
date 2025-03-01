@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
     <div class="container">
         <div class="row">
             <div class="col-lg-5 mx-auto mt-4">
-                <h1>Login SIAKAD</h1>
+                <h1>Login</h1>
                 <form method="POST">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
