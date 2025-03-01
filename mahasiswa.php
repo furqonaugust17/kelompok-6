@@ -11,14 +11,14 @@ switch ($aksi) {
             <table class="table">
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th>Nama</th>
-                        <th>Email</th>
-                        <th>NIM</th>
-                        <th>Gender</th>
-                        <th>Hobi</th>
-                        <th>Alamat</th>
-                        <th>Prodi</th>
+                        <th class ="text-center">No</th>
+                        <th class ="text-start">Nama</th>
+                        <th class ="text-start">Email</th>
+                        <th class ="text-start">NIM</th>
+                        <th class ="text-start">Gender</th>
+                        <th class ="text-start">Hobi</th>
+                        <th class ="text-start">Alamat</th>
+                        <th class ="text-start">Prodi</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -32,7 +32,7 @@ switch ($aksi) {
                             <td></td>
                             <td><?= $values['nama'] ?></td>
                             <td><?= $values['email'] ?></td>
-                            <td><?= $values['nim'] ?></td>
+                            <td class ="text-start"><?= $values['nim'] ?></td>
                             <td><?= $values['gender'] ?></td>
                             <td><?= $values['hobi'] ?></td>
                             <td><?= $values['alamat'] ?></td>
@@ -99,11 +99,11 @@ switch ($aksi) {
             </div>
             <div class="mb-3">
                 <label for="nim" class="form-label">Gender </label>
-                <input class="form-check-input" type="radio" value="L" name="gender" id="laki-laki" <?= $data != null && $data['gender'] == 'Laki-laki' ? 'checked' : ''; ?>>
+                <input class="form-check-input" type="radio" value="L" name="gender" id="laki-laki" <?= $data != null && $data['gender'] == ' Laki-laki ' ? 'checked' : ''; ?>>
                 <label class="form-check-label" for="laki-laki">
                     Laki-Laki
                 </label>
-                <input class="form-check-input" type="radio" value="P" name="gender" id="perempuan" <?= $data != null && $data['gender'] == 'Perempuan' ? 'checked' : ''; ?>>
+                <input class="form-check-input" type="radio" value="P" name="gender" id="perempuan" <?= $data != null && $data['gender'] == ' Perempuan ' ? 'checked' : ''; ?>>
                 <label class="form-check-label" for="perempuan">
                     Perempuan
                 </label>
