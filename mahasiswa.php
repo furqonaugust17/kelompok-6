@@ -29,7 +29,7 @@ switch ($aksi) {
                     while ($values = mysqli_fetch_assoc($selectQuery)) {
                     ?>
                         <tr>
-                            <td></td>
+                            <td class ="text-center"><?= $no++ ?></td>
                             <td><?= $values['nama'] ?></td>
                             <td><?= $values['email'] ?></td>
                             <td class ="text-start"><?= $values['nim'] ?></td>
