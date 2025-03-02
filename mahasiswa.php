@@ -4,7 +4,6 @@ $aksi = isset($_GET['aksi']) ? $_GET['aksi'] : 'read';
 
 switch ($aksi) {
     case 'read':
-
 ?>
         <div class="container">
             <a href="index.php?page=mahasiswa&aksi=form&proses=create" class="btn btn-primary">Tambah Data</a>
@@ -24,16 +23,17 @@ switch ($aksi) {
                 </thead>
                 <tbody>
                     <?php
-                    $selectQuery = mysqli_query($db, "SELECT mahasiswa.*, prodi.nama_prodi FROM mahasiswa LEFT JOIN prodi ON mahasiswa.prodi_id = prodi.id");
+                    $selectQuery = mysqli_query($db, "SELECT mahasiswa.*, prodi.nama_prodi FROM mahasiswa 
+                                                       LEFT JOIN prodi ON mahasiswa.prodi_id = prodi.id");
                     $no = 1;
                     while ($values = mysqli_fetch_assoc($selectQuery)) {
                     ?>
                         <tr>
-                            <td></td>
+                            <td><?= $no++; ?></td>
                             <td><?= $values['nama'] ?></td>
                             <td><?= $values['email'] ?></td>
                             <td><?= $values['nim'] ?></td>
-                            <td><?= $values['gender'] ?></td>
+                            <td><?= ($values['gender'] == 'L') ? 'Laki-laki' : 'Perempuan' ?></td>
                             <td><?= $values['hobi'] ?></td>
                             <td><?= $values['alamat'] ?></td>
                             <td><?= $values['nama_prodi'] == null ? 'prodi belum dipilih' : $values['nama_prodi']; ?></td>
@@ -98,30 +98,16 @@ switch ($aksi) {
                 </select>
             </div>
             <div class="mb-3">
-                <label for="nim" class="form-label">Gender </label>
-                <input class="form-check-input" type="radio" value="Laki-laki" name="gender" id="laki-laki" <?= $data != null && $data['gender'] == ' Laki-laki ' ? 'checked' : ''; ?>>
-                <label class="form-check-label" for="laki-laki">
-                    Laki-Laki
-                </label>
-                <input class="form-check-input" type="radio" value="Perempuan" name="gender" id="perempuan" <?= $data != null && $data['gender'] == ' Perempuan ' ? 'checked' : ''; ?>>
-                <label class="form-check-label" for="perempuan">
-                    Perempuan
-                </label>
-            </div>
-            <div class="mb-3">
-                <label for="nim" class="form-label">Hobi </label>
-                <input class="form-check-input" type="checkbox" value="membaca" name="hobi[]" id="hobi1" <?= $data != null && in_array('membaca', $hobi) ? 'checked' : ''; ?>>
-                <label class="form-check-label" for="hobi1">
-                    Membaca
-                </label>
-                <input class="form-check-input" type="checkbox" value="olahraga" name="hobi[]" id="hobi2" <?= $data != null && in_array('olahraga', $hobi) ? 'checked' : ''; ?>>
-                <label class="form-check-label" for="hobi2">
-                    Olahraga
-                </label>
-                <input class="form-check-input" type="checkbox" value="bermain" name="hobi[]" id="hobi3" <?= $data != null && in_array('bermain', $hobi) ? 'checked' : ''; ?>>
-                <label class="form-check-label" for="hobi3">
-                    Bermain
-                </label>
+                <label for="gender" class="form-label">Gender </label>
+                <div>
+                    <input class="form-check-input" type="radio" value="L" name="gender" id="laki-laki" 
+                        <?= ($data != null && $data['gender'] == 'L') ? 'checked' : ''; ?>>
+                    <label class="form-check-label" for="laki-laki">Laki-laki</label>
+
+                    <input class="form-check-input" type="radio" value="P" name="gender" id="perempuan" 
+                        <?= ($data != null && $data['gender'] == 'P') ? 'checked' : ''; ?>>
+                    <label class="form-check-label" for="perempuan">Perempuan</label>
+                </div>
             </div>
             <div class="mb-3">
                 <label for="alamat" class="form-label">Alamat </label>
@@ -131,4 +117,5 @@ switch ($aksi) {
         </form>
 <?php
         break;
-} ?>
+} 
+?>
