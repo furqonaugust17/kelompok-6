@@ -110,6 +110,21 @@ switch ($aksi) {
                 </div>
             </div>
             <div class="mb-3">
+                <label for="nim" class="form-label">Hobi </label>
+                <input class="form-check-input" type="checkbox" value="membaca" name="hobi[]" id="hobi1" <?= $data != null && in_array('membaca', $hobi) ? 'checked' : ''; ?>>
+                <label class="form-check-label" for="hobi1">
+                    Membaca
+                </label>
+                <input class="form-check-input" type="checkbox" value="olahraga" name="hobi[]" id="hobi2" <?= $data != null && in_array('olahraga', $hobi) ? 'checked' : ''; ?>>
+                <label class="form-check-label" for="hobi2">
+                    Olahraga
+                </label>
+                <input class="form-check-input" type="checkbox" value="bermain" name="hobi[]" id="hobi3" <?= $data != null && in_array('bermain', $hobi) ? 'checked' : ''; ?>>
+                <label class="form-check-label" for="hobi3">
+                    Bermain
+                </label>
+            </div>
+            <div class="mb-3">
                 <label for="alamat" class="form-label">Alamat </label>
                 <textarea name="alamat" id="alamat" class="form-control"><?= ($data != null) ? $data['alamat'] : ''; ?></textarea>
             </div>
@@ -117,5 +132,4 @@ switch ($aksi) {
         </form>
 <?php
         break;
-} 
-?>
+} ?>
