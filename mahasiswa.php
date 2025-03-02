@@ -99,11 +99,11 @@ switch ($aksi) {
             </div>
             <div class="mb-3">
                 <label for="nim" class="form-label">Gender </label>
-                <input class="form-check-input" type="radio" value="L" name="gender" id="laki-laki" <?= $data != null && $data['gender'] == ' Laki-laki ' ? 'checked' : ''; ?>>
+                <input class="form-check-input" type="radio" value="Laki-laki" name="gender" id="laki-laki" <?= $data != null && $data['gender'] == ' Laki-laki ' ? 'checked' : ''; ?>>
                 <label class="form-check-label" for="laki-laki">
                     Laki-Laki
                 </label>
-                <input class="form-check-input" type="radio" value="P" name="gender" id="perempuan" <?= $data != null && $data['gender'] == ' Perempuan ' ? 'checked' : ''; ?>>
+                <input class="form-check-input" type="radio" value="Perempuan" name="gender" id="perempuan" <?= $data != null && $data['gender'] == ' Perempuan ' ? 'checked' : ''; ?>>
                 <label class="form-check-label" for="perempuan">
                     Perempuan
                 </label>
