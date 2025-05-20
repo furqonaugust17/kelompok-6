@@ -11,10 +11,10 @@ switch ($aksi) {
             <table class="table">
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th>NIP</th>
-                        <th>Nama Dosen</th>
-                        <th>Prodi</th>
+                        <th class ="text-center">No</th>
+                        <th class ="text-start">NIP</th>
+                        <th class ="text-start">Nama Dosen</th>
+                        <th class ="text-start">Prodi</th>
                         <th>Foto</th>
                         <th>Action</th>
                     </tr>
@@ -26,11 +26,11 @@ switch ($aksi) {
                     while ($values = mysqli_fetch_assoc($selectQuery)) {
                     ?>
                         <tr>
-                            <td><?= $no++ ?></td>
-                            <td><?= $values['nip'] ?></td>
+                            <td class ="text-center"><?= $no++ ?></td>
+                            <td class ="text-start"><?= $values['nip'] ?></td>
                             <td><?= $values['nama_dosen'] ?></td>
                             <td><?= $values['nama_prodi'] ?></td>
-                            <td><img src="img/<?= $values['foto'] ?>" height="100" width="200" alt="" style="object-fit: contain;"></td>
+                            <td class ="text-center"><img src="img/<?= $values['foto'] ?>" height="100" width="200" alt="" style="object-fit: contain;"></td>
                             <td>
                                 <a class="btn btn-warning" href="index.php?page=dosen&aksi=form&proses=update&id=<?= $values['nip']; ?>">Edit</a>
                                 <?php if (getLevel() == 'admin'): ?>

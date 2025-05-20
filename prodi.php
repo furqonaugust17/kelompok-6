@@ -11,7 +11,7 @@ switch ($aksi) {
             <table class="table">
                 <thead>
                     <tr>
-                        <th>No</th>
+                        <th class ="text-center">No</th>
                         <th>Nama Prodi</th>
                         <th>Jenjang</th>
                         <th>Keterangan</th>
@@ -25,7 +25,7 @@ switch ($aksi) {
                     while ($values = mysqli_fetch_assoc($selectQuery)) {
                     ?>
                         <tr>
-                            <td><?= $no++ ?></td>
+                            <td class ="text-center"><?= $no++ ?></td>
                             <td><?= $values['nama_prodi'] ?></td>
                             <td><?= $values['jenjang'] ?></td>
                             <td><?= $values['keterangan'] ?></td>
